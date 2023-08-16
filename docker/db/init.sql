@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS testing_sgbyte_profile;
+CREATE DATABASE IF NOT EXISTS testing_sgbyte_network;
+CREATE DATABASE IF NOT EXISTS testing_sgbyte_main;
+CREATE DATABASE IF NOT EXISTS testing_sgbyte_payment;
+CREATE DATABASE IF NOT EXISTS testing_sgbyte_product;
+CREATE DATABASE IF NOT EXISTS testing_sgbyte_employee;
+CREATE DATABASE IF NOT EXISTS testing_sgbyte_ticketing;
+
+CREATE DATABASE IF NOT EXISTS dxdev_profile;
+CREATE DATABASE IF NOT EXISTS dxdev_network;
+CREATE DATABASE IF NOT EXISTS dxdev_main;
+CREATE DATABASE IF NOT EXISTS dxdev_payment;
+CREATE DATABASE IF NOT EXISTS dxdev_product;
+CREATE DATABASE IF NOT EXISTS dxdev_employee;
+CREATE DATABASE IF NOT EXISTS dxdev_ticketing;

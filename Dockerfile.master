@@ -1,0 +1,38 @@
+FROM registry.jovasoftware.id/php-version:8
+
+#Composer#
+COPY composer.lock composer.json /var/www/html/
+
+WORKDIR /var/www/html
+
+
+RUN composer install --no-scripts --no-autoloader
+#End of Composer#
+
+#Code Setting#
+COPY ./docker/nginx.conf /etc/nginx/nginx.conf
+COPY ./docker/supervisord.conf /etc/supervisord.conf
+COPY ./docker/php.ini /usr/local/etc/php
+
+COPY . /var/www/html/
+
+RUN cp .env.master .env
+RUN composer dump-autoload
+RUN php artisan config:clear
+
+RUN chown -R www-data /var/www/html/storage && \
+    chown -R www-data /var/www/html/public && \
+    chgrp -R www-data storage /var/www/html/storage && \
+    chmod -R ug=r+w+x storage /var/www/html/storage && \
+    chown -R www-data:www-data /tmp
+
+
+#cron job scheduler
+COPY ./docker/laravel-cron /var/spool/cron/crontabs/root
+RUN crond -L /var/www/html/cron.log
+RUN php artisan schedule:run
+
+#end cron job
+
+EXPOSE 80 443
+CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]

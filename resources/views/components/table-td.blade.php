@@ -1,0 +1,1 @@
+<td class="table-light">{{$slot}}</td>

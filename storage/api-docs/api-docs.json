@@ -1,0 +1,170 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "APIs Shireishi Documentation",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/all-data": {
+            "get": {
+                "tags": [
+                    "All"
+                ],
+                "summary": "Get All Data",
+                "description": "Return All Data",
+                "operationId": "getAlls",
+                "responses": {
+                    "201": {
+                        "description": "Successful operation"
+                    }
+                }
+            }
+        },
+        "/banner?search=banner&limit=10": {
+            "get": {
+                "tags": [
+                    "Banner"
+                ],
+                "summary": "Get Banner Data",
+                "description": "Return All Banner Data",
+                "operationId": "getBanners",
+                "responses": {
+                    "201": {
+                        "description": "Successful operation"
+                    }
+                }
+            }
+        },
+        "/banner/{banner_id}": {
+            "get": {
+                "tags": [
+                    "Banner"
+                ],
+                "summary": "Get Single Banner Data",
+                "description": "Return Single Banner Data by ID",
+                "operationId": "getSingleBanner",
+                "responses": {
+                    "201": {
+                        "description": "Successful operation"
+                    }
+                }
+            }
+        },
+        "/blog?category=1&id=1&search=HelloWorld&hashtag=[1,3]": {
+            "get": {
+                "tags": [
+                    "Blog"
+                ],
+                "summary": "Get Blog Data",
+                "description": "Return All Blog Data",
+                "operationId": "getBlogs",
+                "responses": {
+                    "201": {
+                        "description": "Successful operation"
+                    }
+                }
+            }
+        },
+        "/game-news?category=1&id=1&search=HelloWorld&game=1": {
+            "get": {
+                "tags": [
+                    "Game-News"
+                ],
+                "summary": "Get Game News Data",
+                "description": "Return All Game News Data",
+                "operationId": "getGameNews",
+                "responses": {
+                    "201": {
+                        "description": "Successful operation"
+                    }
+                }
+            }
+        },
+        "/game?search=game&limit=10": {
+            "get": {
+                "tags": [
+                    "Game"
+                ],
+                "summary": "Get Game Data",
+                "description": "Return All Game Data",
+                "operationId": "getGames",
+                "responses": {
+                    "201": {
+                        "description": "Successful operation"
+                    }
+                }
+            }
+        },
+        "/game/{game_id}": {
+            "get": {
+                "tags": [
+                    "Game"
+                ],
+                "summary": "Get Single Game Data",
+                "description": "Return Single Game Data by ID",
+                "operationId": "getSingleGame",
+                "responses": {
+                    "201": {
+                        "description": "Successful operation"
+                    }
+                }
+            }
+        },
+        "/social-media?search=media&limit=10": {
+            "get": {
+                "tags": [
+                    "Social Media"
+                ],
+                "summary": "Get Social Media Data",
+                "description": "Return All Social Media Data",
+                "operationId": "getSocialMedias",
+                "responses": {
+                    "201": {
+                        "description": "Successful operation"
+                    }
+                }
+            }
+        },
+        "/social-media/{social-media_id}": {
+            "get": {
+                "tags": [
+                    "Social Media"
+                ],
+                "summary": "Get Single Social Media Data",
+                "description": "Return Single Social Media Data by ID",
+                "operationId": "getSingleSocialMedia",
+                "responses": {
+                    "201": {
+                        "description": "Successful operation"
+                    }
+                }
+            }
+        },
+        "/web-profile": {
+            "get": {
+                "tags": [
+                    "Web Profile"
+                ],
+                "summary": "Get Profile Data",
+                "description": "Return Profile Data",
+                "operationId": "getWebProfile",
+                "responses": {
+                    "201": {
+                        "description": "Successful operation"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "name": "bearerAuth",
+                "in": "header",
+                "bearerFormat": "Passport",
+                "scheme": "bearer"
+            }
+        }
+    }
+}
